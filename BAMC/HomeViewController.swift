@@ -15,6 +15,11 @@ class HomeViewController: UIViewController {
     
     let healthManager = HealthManager()
     
+    @IBAction func stepCOunt(_ sender: AnyObject) {
+        let startDate = Date()
+        let endDate = Date(timeInterval: 86400, since: startDate)
+        healthManager.getStepCount(startDate: startDate, endDate: endDate)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
