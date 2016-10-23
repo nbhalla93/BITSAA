@@ -16,8 +16,6 @@ class LeaderBoardViewController: UITableViewController {
         super.viewDidLoad()
         LeaderBoardService().getLeaders()
         
-        
-        
     }
     
     
