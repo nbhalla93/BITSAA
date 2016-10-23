@@ -22,6 +22,10 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        APIService.sharedInstance.submitCal(name: "Stupid Nikita", email: "i-am-hot@gmail.com", calories: "[1,2,3,4]") { (total) in
+            
+            print("yay !! total calories burnt = \(total)")
+        }
 //        healthManager.authorizeHealthKit { [weak self ] (success, error) in
 //            guard let strongSelf = self else { return }
 //            
