@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        let url = URL(string: "http://vt.comyr.com/registration.php")
+        let url = URL(string: "http://bamc.netne.net/registration.php")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         

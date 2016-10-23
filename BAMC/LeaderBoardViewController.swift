@@ -14,6 +14,8 @@ class LeaderBoardViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        LeaderBoardService().getLeaders()
+        
         
         
     }
