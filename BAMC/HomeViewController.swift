@@ -15,24 +15,26 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     
     let healthManager = HealthManager()
     
-    @IBAction func stepCOunt(_ sender: AnyObject) {
-        healthManager.updateDailyStepCount()
-        healthManager.updateCalorieCount()
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        healthManager.authorizeHealthKit { (success, error) in
+        healthManager.authorizeHealthKit { [weak self ] (success, error) in
+            guard let strongSelf = self else { return }
+            
             if error != nil {
-//                let error = NSError(domain: "com.BMAC.healthkit", code: 2,
-//                userInfo: [NSLocalizedDescriptionKey:"HealthKit is not available in this Device"])
 
                 print("Error in authorizing")
             } else if success! {
                 print("AUthorized successfully")
+                strongSelf.healthManager.updateDailyStepCount()
+                strongSelf.healthManager.updateCalorieCount()
             }
         }
         healthManager.delegate = self
+        
+        healthManager.updateDailyStepCount()
+        healthManager.updateCalorieCount()
     }
     
     func dataUpdated() {

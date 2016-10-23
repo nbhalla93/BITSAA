@@ -146,11 +146,8 @@ class HealthManager {
     }
     
     func getCalorieCount() {
-        var comps = DateComponents()
-        comps.day = 10
-        comps.month = 10
-        comps.year = 2015
-        let startDate = Calendar.current.date(from: comps)
+        
+        let startDate = Calendar.current.startOfDay(for: Date())
         
         let endDate = Date()
         let sampleType = HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)
