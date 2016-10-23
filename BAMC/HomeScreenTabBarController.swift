@@ -11,4 +11,10 @@ import UIKit
 
 class HomeScreenTabBarController: UITabBarController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabBar.backgroundImage = UIImage()
+        tabBar.tintColor = UIColor.white
+    }
 }

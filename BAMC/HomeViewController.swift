@@ -15,26 +15,30 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     
     let healthManager = HealthManager()
     
+    @IBAction func syncWithServer(_ sender: AnyObject) {
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        healthManager.authorizeHealthKit { [weak self ] (success, error) in
-            guard let strongSelf = self else { return }
-            
-            if error != nil {
-
-                print("Error in authorizing")
-            } else if success! {
-                print("AUthorized successfully")
-                strongSelf.healthManager.updateDailyStepCount()
-                strongSelf.healthManager.updateCalorieCount()
-            }
-        }
-            
-        healthManager.delegate = self
-        
-        healthManager.updateDailyStepCount()
-        healthManager.updateCalorieCount()
+//        healthManager.authorizeHealthKit { [weak self ] (success, error) in
+//            guard let strongSelf = self else { return }
+//            
+//            if error != nil {
+//
+//                print("Error in authorizing")
+//            } else if success! {
+//                print("AUthorized successfully")
+//                strongSelf.healthManager.updateDailyStepCount()
+//                strongSelf.healthManager.updateCalorieCount()
+//            }
+//        }
+//            
+//        healthManager.delegate = self
+//        
+//        healthManager.updateDailyStepCount()
+//        healthManager.updateCalorieCount()
     }
     
     func dataUpdated() {
