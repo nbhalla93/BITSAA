@@ -11,4 +11,15 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    @IBOutlet weak var currentDate: UILabel!
+    @IBOutlet weak var numberOfCalories: UILabel!
+//    var calorieList: [String: ]
+//    
+//    
+//    @IBAction func goToPreviousDay(_ sender: AnyObject) {
+//    }
+//    
+//    @IBAction func goToNextDay(_ sender: AnyObject) {
+//    }
+    
 }
