@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		190CDBEED9F33BD48B5C46EA /* Pods_BAMC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8E641DB14F5D0FEC1877D5 /* Pods_BAMC.framework */; };
+		38B9FAF21DBCFE4000180C42 /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9FAF11DBCFE4000180C42 /* Leader.swift */; };
+		38FF1EC31DBCE2F700A84056 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF1EC21DBCE2F700A84056 /* APIService.swift */; };
 		97018D721DB945D70084545A /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97018D711DB945D70084545A /* HealthViewController.swift */; };
 		978DFD6A1DA0F94E0083C975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978DFD691DA0F94E0083C975 /* AppDelegate.swift */; };
 		978DFD6C1DA0F94E0083C975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978DFD6B1DA0F94E0083C975 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		1EDEA0C7FB8324F75596EE03 /* Pods-BAMC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAMC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAMC/Pods-BAMC.debug.xcconfig"; sourceTree = "<group>"; };
+		38B9FAF11DBCFE4000180C42 /* Leader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
+		38FF1EC21DBCE2F700A84056 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		3A8E641DB14F5D0FEC1877D5 /* Pods_BAMC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAMC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5137813B00A421F1BC917793 /* Pods-BAMC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAMC.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAMC/Pods-BAMC.release.xcconfig"; sourceTree = "<group>"; };
 		97018D711DB945D70084545A /* HealthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			children = (
 				97AEFDB71DBCBE1800705B7F /* LeaderBoardService.swift */,
 				97BF04801DB69DE8005F8917 /* HealthManager.swift */,
+				38FF1EC21DBCE2F700A84056 /* APIService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				97E86F6A1DAA4FFF00C39C6E /* User.swift */,
+				38B9FAF11DBCFE4000180C42 /* Leader.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 					978DFD651DA0F94D0083C975 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 9632522KJP;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -302,8 +309,10 @@
 				97AEFDB31DBC9B9E00705B7F /* HomeViewController.swift in Sources */,
 				978DFD6A1DA0F94E0083C975 /* AppDelegate.swift in Sources */,
 				97AEFDB51DBC9BD100705B7F /* LeaderBoardViewController.swift in Sources */,
+				38FF1EC31DBCE2F700A84056 /* APIService.swift in Sources */,
 				97AEFDB11DBC9B6700705B7F /* HistoryViewController.swift in Sources */,
 				97E86F701DAA6F8400C39C6E /* SignUpViewController.swift in Sources */,
+				38B9FAF21DBCFE4000180C42 /* Leader.swift in Sources */,
 				97E86F6B1DAA4FFF00C39C6E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

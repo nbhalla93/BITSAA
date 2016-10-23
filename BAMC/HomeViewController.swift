@@ -17,16 +17,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        healthManager.authorizeHealthKit { (success, error) in
-            if error != nil {
-                let error = NSError(domain: "com.BMAC.healthkit", code: 2, userInfo: [NSLocalizedDescriptionKey:"HealthKit is not available in this Device"])
-
-                print("Error in authorizing")
-            } else if success! {
-                print("AUthorized successfully")
-            }
-            
+        APIService.sharedInstance.getLeaders { (leaders) in
+            print("got leaders = \(leaders)")
         }
         
     }
