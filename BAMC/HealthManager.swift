@@ -9,10 +9,17 @@
 import Foundation
 import HealthKit
 
+protocol HealthManagerDelegate {
+    func dataUpdated()
+}
+
+
 class HealthManager {
     let healthKitStore:HKHealthStore = HKHealthStore()
     var heightString = ""
     var stepCount = 0
+    var calorie = 0
+    var delegate: HealthManagerDelegate?
     
     func dataTypesToWrite() -> Set<HKSampleType> {
         let heightType: HKQuantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!
@@ -63,12 +70,9 @@ class HealthManager {
         
     }
     
-    func getStepCount(startDate: Date, endDate: Date) {
+    func updateDailyStepCount() {
         
         let sampleType = HKSampleType.quantityType(forIdentifier: .stepCount)
-//        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-        
-//        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
 
         let query = HKObserverQuery(sampleType: sampleType!, predicate: nil) { (query, completionHandler, error) in
             if error != nil {
@@ -80,7 +84,7 @@ class HealthManager {
             
             // Take whatever steps are necessary to update your app's data and UI
             // This may involve executing other queries
-            self.updateDailyStepCount()
+            self.getStepCount()
             
             // If you have subscribed for background updates you must call the completion handler here.
             // completionHandler()
@@ -90,9 +94,14 @@ class HealthManager {
         healthKitStore.execute(query)
     }
     
-    func updateDailyStepCount() {
-        let startDate = Date()
-        let endDate = Date(timeInterval: 2592000, since: startDate)
+    func getStepCount() {
+        var comps = DateComponents()
+        comps.day = 10
+        comps.month = 10
+        comps.year = 2016
+        let startDate = Calendar.current.date(from: comps)
+
+        let endDate = Date()
         let sampleType = HKSampleType.quantityType(forIdentifier: .stepCount)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
 
@@ -105,6 +114,58 @@ class HealthManager {
                                                 
                                                 if let count = mostRecentSample?.quantity.doubleValue(for: HKUnit.count()) {
                                                     self.stepCount = Int(count)
+                                                    self.delegate?.dataUpdated()
+                                                }
+                                            }
+        }
+        healthKitStore.execute(sampleQuery)
+    }
+    
+    func updateCalorieCount() {
+        
+        let sampleType = HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)
+        
+        let query = HKObserverQuery(sampleType: sampleType!, predicate: nil) { (query, completionHandler, error) in
+            if error != nil {
+                
+                // Perform Proper Error Handling Here...
+                print("*** An error occured while setting up the stepCount observer. \(error?.localizedDescription) ***")
+                abort()
+            }
+            
+            // Take whatever steps are necessary to update your app's data and UI
+            // This may involve executing other queries
+            self.getCalorieCount()
+            
+            // If you have subscribed for background updates you must call the completion handler here.
+            // completionHandler()
+            
+        }
+        
+        healthKitStore.execute(query)
+    }
+    
+    func getCalorieCount() {
+        var comps = DateComponents()
+        comps.day = 10
+        comps.month = 10
+        comps.year = 2015
+        let startDate = Calendar.current.date(from: comps)
+        
+        let endDate = Date()
+        let sampleType = HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        
+        let sampleQuery = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: HKObjectQueryNoLimit,
+                                        sortDescriptors: [sortDescriptor]) { (query, result, error) in
+                                            if (result != nil) && (error == nil) {
+                                                let mostRecentSample = result?.first as? HKQuantitySample
+                                                
+                                                if let count = mostRecentSample?.quantity.doubleValue(for: HKUnit.calorie()) {
+                                                    self.calorie = Int(count)
+                                                    self.delegate?.dataUpdated()
                                                 }
                                             }
         }
