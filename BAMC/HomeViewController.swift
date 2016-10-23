@@ -18,9 +18,6 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIService.sharedInstance.getLeaders { (leaders) in
-            print("got leaders = \(leaders)")
-        }
         healthManager.authorizeHealthKit { [weak self ] (success, error) in
             guard let strongSelf = self else { return }
             
