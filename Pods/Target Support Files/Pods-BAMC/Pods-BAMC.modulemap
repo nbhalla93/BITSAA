@@ -1,0 +1,6 @@
+framework module Pods_BAMC {
+  umbrella header "Pods-BAMC-umbrella.h"
+
+  export *
+  module * { export * }
+}
