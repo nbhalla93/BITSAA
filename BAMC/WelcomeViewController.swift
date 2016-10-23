@@ -15,5 +15,8 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user = UserDefaults.standard.value(forKey: "user") as! User
+        name.text = user.name
     }
 }

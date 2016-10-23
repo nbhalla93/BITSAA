@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController {
         
         if let nameS = name.text, let numberS = mobileNumber.text, let mailS = emailID.text, let passS = password.text {
             user = User(sampleName: nameS, number: numberS, mail: mailS, pass: passS)
+            UserDefaults.standard.set(user, forKey: "user")
         } else {
             let alert = UIAlertController(title: "Required Fields Missing", message: "All the fields are reuired to sign up", preferredStyle: .alert)
             present(alert, animated: true, completion: nil)
