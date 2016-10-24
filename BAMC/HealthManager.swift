@@ -15,6 +15,9 @@ protocol HealthManagerDelegate {
 
 
 class HealthManager {
+    
+    static let sharedInstance = HealthManager()
+
     let healthKitStore:HKHealthStore = HKHealthStore()
     var heightString = ""
     var stepCount = 0
@@ -95,31 +98,48 @@ class HealthManager {
     }
     
     func getStepCount() {
-        var comps = DateComponents()
-        comps.day = 10
-        comps.month = 10
-        comps.year = 2016
-        let startDate = Calendar.current.date(from: comps)
-
-        let endDate = Date()
-        let sampleType = HKSampleType.quantityType(forIdentifier: .stepCount)
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         
-        let sampleQuery = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: HKObjectQueryNoLimit,
-                                        sortDescriptors: [sortDescriptor]) { (query, result, error) in
-                                            if (result != nil) && (error == nil) {
-                                                let mostRecentSample = result?.first as? HKQuantitySample
-                                                
-                                                if let count = mostRecentSample?.quantity.doubleValue(for: HKUnit.count()) {
-                                                    self.stepCount = Int(count)
-                                                    self.delegate?.dataUpdated()
-                                                }
-                                            }
+        let startDate = Calendar.current.startOfDay(for: Date())
+        
+        let endDate = Date()
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let quantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)
+        let interval = NSDateComponents()
+        interval.day = 1
+        let query = HKStatisticsCollectionQuery(quantityType: quantityType!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents:interval as DateComponents)
+        
+        query.initialResultsHandler = { query, results, error in
+            
+            if error != nil {
+                
+                //  Something went Wrong
+                return
+            }
+            
+            if let myResults = results{
+                myResults.enumerateStatistics(from: startDate, to: endDate as Date) {
+                    statistics, stop in
+                    
+                    if let quantity = statistics.sumQuantity() {
+                        
+                        let step = quantity.doubleValue(for: HKUnit.count())
+                        
+                        self.stepCount = Int(step)
+                        self.delegate?.dataUpdated()
+
+                        
+                    }
+                }
+            }
+            
+            
         }
-        healthKitStore.execute(sampleQuery)
+        
+        
+        healthKitStore.execute(query)
     }
+
     
     func updateCalorieCount() {
         
@@ -150,22 +170,79 @@ class HealthManager {
         let startDate = Calendar.current.startOfDay(for: Date())
         
         let endDate = Date()
-        let sampleType = HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
         
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        let quantityType = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)
+        let interval = NSDateComponents()
+        interval.day = 1
+        let query = HKStatisticsCollectionQuery(quantityType: quantityType!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents:interval as DateComponents)
         
-        let sampleQuery = HKSampleQuery(sampleType: sampleType!, predicate: predicate, limit: HKObjectQueryNoLimit,
-                                        sortDescriptors: [sortDescriptor]) { (query, result, error) in
-                                            if (result != nil) && (error == nil) {
-                                                let mostRecentSample = result?.first as? HKQuantitySample
-                                                
-                                                if let count = mostRecentSample?.quantity.doubleValue(for: HKUnit.calorie()) {
-                                                    self.calorie = Int(count)
-                                                    self.delegate?.dataUpdated()
-                                                }
-                                            }
+        query.initialResultsHandler = { query, results, error in
+            
+            if error != nil {
+                
+                //  Something went Wrong
+                return
+            }
+            
+            if let myResults = results{
+                myResults.enumerateStatistics(from: startDate, to: endDate as Date) {
+                    statistics, stop in
+                    
+                    if let quantity = statistics.sumQuantity() {
+                        
+                        let step = quantity.doubleValue(for: HKUnit.calorie())
+                        
+                        self.calorie = Int(step) / 1000
+                        self.delegate?.dataUpdated()
+                        
+                        
+                    }
+                }
+            }
+            
+            
         }
-        healthKitStore.execute(sampleQuery)
+        
+        
+        healthKitStore.execute(query)
+    }
+
+    func getCalorieCount(startDate: Date, endDate: Date, comletion: @escaping ((Int) -> Void)) {
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let quantityType = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)
+        let interval = NSDateComponents()
+        interval.day = 1
+        let query = HKStatisticsCollectionQuery(quantityType: quantityType!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents:interval as DateComponents)
+        
+        query.initialResultsHandler = { query, results, error in
+            
+            if error != nil {
+                
+                //  Something went Wrong
+                return
+            }
+            
+            if let myResults = results{
+                myResults.enumerateStatistics(from: startDate, to: endDate as Date) {
+                    statistics, stop in
+                    
+                    if let quantity = statistics.sumQuantity() {
+                        
+                        let calorie = quantity.doubleValue(for: HKUnit.calorie())/1000
+                        
+                        comletion(Int(calorie))
+                        
+                    }
+                }
+            }
+            
+            
+        }
+        
+        
+        healthKitStore.execute(query)
     }
 }

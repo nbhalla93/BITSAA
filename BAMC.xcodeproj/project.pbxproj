@@ -30,7 +30,6 @@
 		97E86F6D1DAA540A00C39C6E /* UIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E86F6C1DAA540A00C39C6E /* UIAssets.xcassets */; };
 		97E86F701DAA6F8400C39C6E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E86F6F1DAA6F8400C39C6E /* SignUpViewController.swift */; };
 		97E86F721DAA75A100C39C6E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E86F711DAA75A100C39C6E /* WelcomeViewController.swift */; };
-		97FEE6A21DBE708900A7149B /* PercentageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FEE6A11DBE708900A7149B /* PercentageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +61,6 @@
 		97E86F6C1DAA540A00C39C6E /* UIAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UIAssets.xcassets; sourceTree = "<group>"; };
 		97E86F6F1DAA6F8400C39C6E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		97E86F711DAA75A100C39C6E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		97FEE6A11DBE708900A7149B /* PercentageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 				97E86F691DAA4FC300C39C6E /* Models */,
 				97E86F6E1DAA6F5B00C39C6E /* Controllers */,
 				978DFD691DA0F94E0083C975 /* AppDelegate.swift */,
-				97FEE6A11DBE708900A7149B /* PercentageView.swift */,
 				978DFD6B1DA0F94E0083C975 /* ViewController.swift */,
 				978DFD6D1DA0F94E0083C975 /* Main.storyboard */,
 				978DFD701DA0F94E0083C975 /* Assets.xcassets */,
@@ -315,7 +312,6 @@
 				97E86F721DAA75A100C39C6E /* WelcomeViewController.swift in Sources */,
 				97018D721DB945D70084545A /* HealthViewController.swift in Sources */,
 				972206C61DBD3AED001427C9 /* Constants.swift in Sources */,
-				97FEE6A21DBE708900A7149B /* PercentageView.swift in Sources */,
 				97AEFDB81DBCBE1800705B7F /* LeaderBoardService.swift in Sources */,
 				97AEFDB31DBC9B9E00705B7F /* HomeViewController.swift in Sources */,
 				978DFD6A1DA0F94E0083C975 /* AppDelegate.swift in Sources */,

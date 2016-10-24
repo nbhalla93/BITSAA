@@ -21,17 +21,20 @@ class SignUpViewController: UIViewController {
 //    let service = RegistrationService()
     
     @IBAction func signUp(_ sender: AnyObject) {
-        var user = User()
         
         if let nameS = name.text, let numberS = mobileNumber.text, let mailS = emailID.text, let passS = password.text {
-            user = User(sampleName: nameS, number: numberS, mail: mailS, pass: passS)
-            UserDefaults.standard.set(user, forKey: kuser)
-            
+            UserDefaults.standard.set(name.text, forKey: kname)
+            UserDefaults.standard.set(emailID.text, forKey: kemail)
+
             APIService.sharedInstance.signUp(name: nameS, email: mailS, phone: numberS, password: passS, completion: { [weak self] name in
                 guard let strongSelf = self else { return }
                 let view = WelcomeViewController.instantiateFromStoryboard()
+                DispatchQueue.main.async {
+                    strongSelf.present(view, animated: true, completion: nil)
+
+                }
                 
-                strongSelf.present(view, animated: true, completion: nil)
+                
             })
             
         } else {

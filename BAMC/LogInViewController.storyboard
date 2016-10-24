@@ -99,18 +99,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WNW-Bu-qmw" id="e3o-4V-E4o">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qpp-uA-Gmx">
-                                            <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
+                                            <frame key="frameInset" minX="15" minY="12" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ntv-mL-Oxe">
-                                            <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
+                                            <frame key="frameInset" minX="316" minY="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -229,8 +229,22 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZe-ga-Wlm">
                                         <state key="normal" title="Button" image="ic_sync_black_24dp"/>
+                                        <connections>
+                                            <action selector="syncWithServer:" destination="XlN-6Q-3I6" eventType="touchUpInside" id="66H-sc-Ra8"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Calories " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sak-H1-I7O">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2A-Qd-pyv">
+                                        <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                        <color key="textColor" red="0.33725490200000002" green="0.1333333333" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="koF-E0-tcQ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Boj-np-1qO"/>
+                                            <constraint firstAttribute="height" constant="10" id="xdo-pi-ZjG"/>
+                                        </constraints>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Achieved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sak-H1-I7O">
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.33725490200000002" green="0.1333333333" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -239,12 +253,16 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="swx-ac-Nfv" firstAttribute="top" secondItem="NBO-mr-xPL" secondAttribute="top" id="8gg-8M-mXc"/>
+                                    <constraint firstItem="koF-E0-tcQ" firstAttribute="top" secondItem="V2A-Qd-pyv" secondAttribute="bottom" constant="40" id="9y8-3P-CCK"/>
                                     <constraint firstItem="AFm-Y4-Oyh" firstAttribute="centerY" secondItem="uZe-ga-Wlm" secondAttribute="centerY" id="BcH-73-wrX"/>
                                     <constraint firstAttribute="trailing" secondItem="swx-ac-Nfv" secondAttribute="trailing" id="Cwc-MC-Rp2"/>
                                     <constraint firstItem="uZe-ga-Wlm" firstAttribute="leading" secondItem="AFm-Y4-Oyh" secondAttribute="trailing" constant="10" id="SXu-t7-HTF"/>
                                     <constraint firstItem="swx-ac-Nfv" firstAttribute="leading" secondItem="NBO-mr-xPL" secondAttribute="leading" id="WMj-zo-Xmj"/>
                                     <constraint firstAttribute="trailing" secondItem="uZe-ga-Wlm" secondAttribute="trailing" constant="10" id="Y5j-8E-awK"/>
-                                    <constraint firstAttribute="bottom" secondItem="sak-H1-I7O" secondAttribute="bottom" constant="10" id="Z8u-ag-fKY"/>
+                                    <constraint firstAttribute="bottom" secondItem="sak-H1-I7O" secondAttribute="bottom" constant="20" id="Z8u-ag-fKY"/>
+                                    <constraint firstItem="V2A-Qd-pyv" firstAttribute="centerX" secondItem="NBO-mr-xPL" secondAttribute="centerX" id="Zcd-KC-kPI"/>
+                                    <constraint firstItem="koF-E0-tcQ" firstAttribute="centerX" secondItem="NBO-mr-xPL" secondAttribute="centerX" id="ayE-nY-4hm"/>
+                                    <constraint firstItem="sak-H1-I7O" firstAttribute="top" secondItem="koF-E0-tcQ" secondAttribute="bottom" constant="20" id="huQ-jv-pej"/>
                                     <constraint firstItem="uZe-ga-Wlm" firstAttribute="top" secondItem="swx-ac-Nfv" secondAttribute="bottom" constant="10" id="jfx-dj-KCT"/>
                                     <constraint firstItem="sak-H1-I7O" firstAttribute="centerX" secondItem="NBO-mr-xPL" secondAttribute="centerX" id="sYC-VH-rsQ"/>
                                 </constraints>
@@ -315,6 +333,8 @@
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home_black_24dp" selectedImage="ic_home_black_24dp" id="HZV-gE-2zA"/>
                     <connections>
                         <outlet property="calorieCount" destination="l4n-JX-a1n" id="Arn-yb-6qe"/>
+                        <outlet property="percentage" destination="V2A-Qd-pyv" id="Q2l-8e-aSn"/>
+                        <outlet property="progressViewbar" destination="koF-E0-tcQ" id="cQQ-Cc-Zed"/>
                         <outlet property="stepCount" destination="jT5-r6-zC0" id="5tv-0z-mRY"/>
                     </connections>
                 </viewController>

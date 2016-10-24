@@ -223,7 +223,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="XFw-dq-DOg">
             <objects>
-                <viewController restorationIdentifier="PostRegistrationViewController" id="3dd-im-iON" customClass="WelcomeViewController" customModule="BAMC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="WelcomeViewController" storyboardIdentifier="WelcomeViewController" id="3dd-im-iON" customClass="WelcomeViewController" customModule="BAMC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c95-Kf-Xn6"/>
                         <viewControllerLayoutGuide type="bottom" id="cOQ-01-1VY"/>
