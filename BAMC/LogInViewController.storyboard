@@ -217,17 +217,17 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBO-mr-xPL">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdW-vs-wV9">
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="syncWithServer:" destination="XlN-6Q-3I6" eventType="touchUpInside" id="3qm-gD-NIE"/>
-                                        </connections>
-                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fitnessimage" translatesAutoresizingMaskIntoConstraints="NO" id="swx-ac-Nfv">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="e0s-ge-32m"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="TdW-vs-wV9" firstAttribute="top" secondItem="NBO-mr-xPL" secondAttribute="top" constant="10" id="WcT-Ci-arx"/>
-                                    <constraint firstAttribute="trailing" secondItem="TdW-vs-wV9" secondAttribute="trailing" constant="10" id="zwK-jH-YlC"/>
+                                    <constraint firstItem="swx-ac-Nfv" firstAttribute="top" secondItem="NBO-mr-xPL" secondAttribute="top" id="8gg-8M-mXc"/>
+                                    <constraint firstAttribute="trailing" secondItem="swx-ac-Nfv" secondAttribute="trailing" id="Cwc-MC-Rp2"/>
+                                    <constraint firstItem="swx-ac-Nfv" firstAttribute="leading" secondItem="NBO-mr-xPL" secondAttribute="leading" id="WMj-zo-Xmj"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riz-Wo-4Dz">
@@ -365,6 +365,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fitnessimage" width="293" height="172"/>
         <image name="ic_history_black_24dp" width="24" height="24"/>
         <image name="ic_home_black_24dp" width="36" height="36"/>
         <image name="ic_perm_identity_black_24dp" width="24" height="24"/>
