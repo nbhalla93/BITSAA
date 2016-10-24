@@ -1,18 +1,15 @@
 PODS:
   - SwiftHTTP (2.0.1)
   - SwiftyJSON (3.1.1)
-  - UICircularProgressRing (1.1.1)
 
 DEPENDENCIES:
   - SwiftHTTP (~> 2.0.0)
   - SwiftyJSON
-  - UICircularProgressRing
 
 SPEC CHECKSUMS:
   SwiftHTTP: 6d57b54ee84d9ad9cf81b6bc1c4cae593e3f6329
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
-  UICircularProgressRing: c37697577b2f07841fa901ad162959f6f5530204
 
-PODFILE CHECKSUM: 608d46211890179f34af8f937509c8f43f04bf55
+PODFILE CHECKSUM: 846845ebd7f59b587a90cdb6e7dee2d3b6fcf722
 
 COCOAPODS: 1.0.0
