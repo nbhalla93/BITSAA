@@ -7,6 +7,7 @@ target 'BAMC' do
 
   # Pods for BAMC
   pod 'SwiftHTTP', '~> 2.0.0'
+  pod 'UICircularProgressRing'
   pod 'SwiftyJSON'
 
 end
