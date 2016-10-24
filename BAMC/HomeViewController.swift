@@ -12,20 +12,25 @@ import UIKit
 class HomeViewController: UIViewController, HealthManagerDelegate {
     @IBOutlet weak var calorieCount: UILabel!
     @IBOutlet weak var stepCount: UILabel!
+    var calorie = 0
+    var step = 0
     
     let healthManager = HealthManager()
     
     @IBAction func syncWithServer(_ sender: AnyObject) {
         
+        let table = modifyCalorieListTableWithValue(value: calorie)
+        
+        APIService.sharedInstance.submitCal(name: "Nikita", email: "yay@gmail.com", calories: "[1,2,3,4]") { (total) in
+            
+            print("yay !! total calories burnt = \(total)")
+        }
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIService.sharedInstance.submitCal(name: "Stupid Nikita", email: "i-am-hot@gmail.com", calories: "[1,2,3,4]") { (total) in
-            
-            print("yay !! total calories burnt = \(total)")
-        }
+
 //        healthManager.authorizeHealthKit { [weak self ] (success, error) in
 //            guard let strongSelf = self else { return }
 //            
@@ -50,6 +55,12 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
             guard let strongSelf = self else { return }
             strongSelf.stepCount.text = String(strongSelf.healthManager.stepCount)
             strongSelf.calorieCount.text = String(strongSelf.healthManager.calorie)
+            strongSelf.calorie = strongSelf.healthManager.calorie
+            strongSelf.step = strongSelf.healthManager.stepCount
         }
+    }
+    
+    func updateLocalTable() {
+        
     }
 }

@@ -11,6 +11,12 @@ import UIKit
 
 class HomeScreenTabBarController: UITabBarController {
 
+    class func instantiateFromStoryboard() -> HomeScreenTabBarController {
+        let storyboard = UIStoryboard(name: "LogInViewController", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "HomeScreenTabBarController")
+            // swiftlint:disable:next force_cast
+            as! HomeScreenTabBarController
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

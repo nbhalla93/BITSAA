@@ -12,6 +12,7 @@
 		38FF1EC31DBCE2F700A84056 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF1EC21DBCE2F700A84056 /* APIService.swift */; };
 		97018D721DB945D70084545A /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97018D711DB945D70084545A /* HealthViewController.swift */; };
 		972206C61DBD3AED001427C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972206C51DBD3AED001427C9 /* Constants.swift */; };
+		972206C81DBD4B58001427C9 /* StoredValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972206C71DBD4B58001427C9 /* StoredValues.swift */; };
 		978DFD6A1DA0F94E0083C975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978DFD691DA0F94E0083C975 /* AppDelegate.swift */; };
 		978DFD6C1DA0F94E0083C975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978DFD6B1DA0F94E0083C975 /* ViewController.swift */; };
 		978DFD6F1DA0F94E0083C975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978DFD6D1DA0F94E0083C975 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		5137813B00A421F1BC917793 /* Pods-BAMC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAMC.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAMC/Pods-BAMC.release.xcconfig"; sourceTree = "<group>"; };
 		97018D711DB945D70084545A /* HealthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
 		972206C51DBD3AED001427C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		972206C71DBD4B58001427C9 /* StoredValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredValues.swift; sourceTree = "<group>"; };
 		978DFD661DA0F94D0083C975 /* BAMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978DFD691DA0F94E0083C975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		978DFD6B1DA0F94E0083C975 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				978DFD721DA0F94E0083C975 /* LaunchScreen.storyboard */,
 				978DFD751DA0F94E0083C975 /* Info.plist */,
 				972206C51DBD3AED001427C9 /* Constants.swift */,
+				972206C71DBD4B58001427C9 /* StoredValues.swift */,
 			);
 			path = BAMC;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				97AEFDB11DBC9B6700705B7F /* HistoryViewController.swift in Sources */,
 				97E86F701DAA6F8400C39C6E /* SignUpViewController.swift in Sources */,
 				38B9FAF21DBCFE4000180C42 /* Leader.swift in Sources */,
+				972206C81DBD4B58001427C9 /* StoredValues.swift in Sources */,
 				97E86F6B1DAA4FFF00C39C6E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

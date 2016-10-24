@@ -37,6 +37,22 @@ class APIService: NSObject {
         }
     }
     
+    func signUp(name:String, email:String, phone: String, password: String, completion: @escaping (_:String) -> ()) {
+        let params = ["name": name, "email" : email, "password": password, "number": phone] as [String : Any]
+        let headers = ["Content-Type": "multipart/form-data"]
+        do {
+            let opt = try HTTP.POST("http://bamc.netne.net/registration.php", parameters: params,headers: headers)
+            opt.start { response in
+                let reponseString = self.sanitize(input: response.text!)
+                print("responseString = \(reponseString)")
+                completion(reponseString)
+                
+            }
+        } catch let error {
+            print("got an error creating the request: \(error)")
+        }
+    }
+    
     func submitCal(name:String, email:String, calories:String, completion: @escaping (_:String) -> ()) {
         let params = ["name": name, "email" : email, "map": calories] as [String : Any]
         let headers = ["Content-Type": "multipart/form-data"]
