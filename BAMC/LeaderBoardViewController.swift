@@ -15,14 +15,21 @@ class LeaderBoardViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        tableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         APIService.sharedInstance.getLeaders { (leaders) in
             print("got leaders = \(leaders)")
             self.leaders = leaders
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             
         }
-        
-        tableView.separatorStyle = .none
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

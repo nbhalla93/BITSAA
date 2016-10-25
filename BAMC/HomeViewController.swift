@@ -72,10 +72,14 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
         
         APIService.sharedInstance.submitCal(name: name, email: email, calories: stringValue) { [weak self] value in
             guard let strongSelf = self else { return }
-            let val: Int = (Int(value)! / 1000000) * 100
-            strongSelf.percentage.text = String(val)
-            strongSelf.progressViewbar.progress = Float(value)!/1000000
-        }
+            if let valReceived = Int(value) {
+                let val = (valReceived/100000)*100
+                DispatchQueue.main.async {
+                    strongSelf.percentage.text = String(val)
+                    strongSelf.progressViewbar.progress = Float(valReceived/1000000)
+                }
+            }
+            }
 
     }
     
