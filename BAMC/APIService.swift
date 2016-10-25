@@ -53,7 +53,7 @@ class APIService: NSObject {
         }
     }
     
-    func submitCal(name:String, email:String, calories:String, completion: @escaping (_:String) -> ()) {
+    func submitCal(name:String, email:String, calories:String, completion: @escaping (_:String, _:Error?) -> ()) {
         let params = ["name": name, "email" : email, "map": calories] as [String : Any]
         let headers = ["Content-Type": "multipart/form-data"]
         do {
@@ -61,11 +61,12 @@ class APIService: NSObject {
             opt.start { response in
                 let reponseString = self.sanitize(input: response.text!)
                 print("responseString = \(reponseString)")
-                completion(reponseString)
+                completion(reponseString, nil)
                 
             }
         } catch let error {
             print("got an error creating the request: \(error)")
+            completion("", error)
         }
     }
     

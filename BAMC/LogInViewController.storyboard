@@ -249,6 +249,13 @@
                                         <color key="textColor" red="0.33725490200000002" green="0.1333333333" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eH8-fq-Rc7">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="NT8-Ps-uob"/>
+                                            <constraint firstAttribute="width" constant="20" id="XJe-PX-eHz"/>
+                                        </constraints>
+                                        <color key="color" red="0.33725490200000002" green="0.1333333333" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -256,6 +263,7 @@
                                     <constraint firstItem="koF-E0-tcQ" firstAttribute="top" secondItem="V2A-Qd-pyv" secondAttribute="bottom" constant="40" id="9y8-3P-CCK"/>
                                     <constraint firstItem="AFm-Y4-Oyh" firstAttribute="centerY" secondItem="uZe-ga-Wlm" secondAttribute="centerY" id="BcH-73-wrX"/>
                                     <constraint firstAttribute="trailing" secondItem="swx-ac-Nfv" secondAttribute="trailing" id="Cwc-MC-Rp2"/>
+                                    <constraint firstItem="eH8-fq-Rc7" firstAttribute="top" secondItem="AFm-Y4-Oyh" secondAttribute="bottom" constant="10" id="NP4-CK-Y9Y"/>
                                     <constraint firstItem="uZe-ga-Wlm" firstAttribute="leading" secondItem="AFm-Y4-Oyh" secondAttribute="trailing" constant="10" id="SXu-t7-HTF"/>
                                     <constraint firstItem="swx-ac-Nfv" firstAttribute="leading" secondItem="NBO-mr-xPL" secondAttribute="leading" id="WMj-zo-Xmj"/>
                                     <constraint firstAttribute="trailing" secondItem="uZe-ga-Wlm" secondAttribute="trailing" constant="10" id="Y5j-8E-awK"/>
@@ -265,6 +273,7 @@
                                     <constraint firstItem="sak-H1-I7O" firstAttribute="top" secondItem="koF-E0-tcQ" secondAttribute="bottom" constant="20" id="huQ-jv-pej"/>
                                     <constraint firstItem="uZe-ga-Wlm" firstAttribute="top" secondItem="swx-ac-Nfv" secondAttribute="bottom" constant="10" id="jfx-dj-KCT"/>
                                     <constraint firstItem="sak-H1-I7O" firstAttribute="centerX" secondItem="NBO-mr-xPL" secondAttribute="centerX" id="sYC-VH-rsQ"/>
+                                    <constraint firstItem="eH8-fq-Rc7" firstAttribute="centerX" secondItem="AFm-Y4-Oyh" secondAttribute="centerX" id="vfT-LU-TXL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-pP-YcV">
@@ -332,6 +341,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home_black_24dp" selectedImage="ic_home_black_24dp" id="HZV-gE-2zA"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="eH8-fq-Rc7" id="Nbp-aI-Tor"/>
                         <outlet property="calorieCount" destination="l4n-JX-a1n" id="Arn-yb-6qe"/>
                         <outlet property="percentage" destination="V2A-Qd-pyv" id="Q2l-8e-aSn"/>
                         <outlet property="progressViewbar" destination="koF-E0-tcQ" id="cQQ-Cc-Zed"/>

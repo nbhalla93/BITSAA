@@ -12,6 +12,7 @@ import UIKit
 class LeaderBoardViewController: UITableViewController {
 
     var leaders: [Leader] = []
+    var activityIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +21,17 @@ class LeaderBoardViewController: UITableViewController {
         tableView.separatorStyle = .none
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        APIService.sharedInstance.getLeaders { (leaders) in
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator?.startAnimating()
+        APIService.sharedInstance.getLeaders { [weak self] (leaders) in
+            guard let strongSelf = self else { return }
+
             print("got leaders = \(leaders)")
-            self.leaders = leaders
+            strongSelf.leaders = leaders
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                strongSelf.tableView.reloadData()
+                strongSelf.activityIndicator?.stopAnimating()
             }
             
         }
@@ -51,7 +56,15 @@ class LeaderBoardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sview = UIView()
         sview.backgroundColor = UIColor(colorLiteralRed: 0.34, green: 0.13, blue: 0.31, alpha: 1.0)
-
+        
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 25, width: 20, height: 20))
+        activityIndicator?.hidesWhenStopped = true
+        activityIndicator?.color = UIColor.white
+        if let viewActivity = activityIndicator {
+            sview.addSubview(viewActivity)
+        }
+        
+        
         let label = UILabel(frame: CGRect(x: 10, y: 25, width: 200, height: 20))
         label.text = "Leaderboard"
         label.font = UIFont.boldSystemFont(ofSize: 17.0)

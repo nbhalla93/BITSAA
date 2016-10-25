@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     @IBOutlet weak var percentage: UILabel!
     @IBOutlet weak var progressViewbar: UIProgressView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     let healthManager = HealthManager.sharedInstance
 
     override func viewDidLoad() {
@@ -37,11 +38,12 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
             
         healthManager.delegate = self
         syncWithServer(nil)
+        activityIndicator.stopAnimating()
     }
     
     
     @IBAction func syncWithServer(_ sender: AnyObject?) {
-        
+        activityIndicator.startAnimating()
         getCalorieString()
 
     }
@@ -49,8 +51,8 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     func getCalorieString() {
         var totalCalorie = 0
             var comps = DateComponents()
-            comps.day = 22
-            comps.month = 10
+            comps.day = 1
+            comps.month = 11
             comps.year = 2016
             let datey = Calendar.current.date(from: comps)
             let startDate = Calendar.current.startOfDay(for: datey!)
@@ -70,17 +72,24 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
         let email = UserDefaults.standard.value(forKey: kemail) as! String
         
         
-        APIService.sharedInstance.submitCal(name: name, email: email, calories: stringValue) { [weak self] value in
+        APIService.sharedInstance.submitCal(name: name, email: email, calories: stringValue) { [weak self] (value, error) in
             guard let strongSelf = self else { return }
+            if error != nil {
+                strongSelf.activityIndicator.stopAnimating()
+            }
+            
             if let valReceived = Int(value) {
                 let val = (valReceived/100000)*100
                 DispatchQueue.main.async {
                     strongSelf.percentage.text = String(val)
                     strongSelf.progressViewbar.progress = Float(valReceived/1000000)
+                    strongSelf.activityIndicator.stopAnimating()
                 }
             }
-            }
+            strongSelf.activityIndicator.stopAnimating()
 
+            }
+        activityIndicator.stopAnimating()
     }
     
     func dataUpdated() {
