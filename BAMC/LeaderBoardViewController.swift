@@ -57,7 +57,7 @@ class LeaderBoardViewController: UITableViewController {
         let sview = UIView()
         sview.backgroundColor = UIColor(colorLiteralRed: 0.34, green: 0.13, blue: 0.31, alpha: 1.0)
         
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 25, width: 20, height: 20))
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 210, y: 25, width: 20, height: 20))
         activityIndicator?.hidesWhenStopped = true
         activityIndicator?.color = UIColor.white
         if let viewActivity = activityIndicator {
