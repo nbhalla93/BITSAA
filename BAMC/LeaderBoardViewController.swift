@@ -32,13 +32,13 @@ class LeaderBoardViewController: UITableViewController {
             print("got leaders = \(leaders)")
             strongSelf.leaders = leaders
             
-            let name = UserDefaults.standard.value(forKey: kname) as! String
+            let email = UserDefaults.standard.value(forKey: kemail) as! String
             var i = 1
             
             for user in strongSelf.leaders {
-                let userName = user.name
+                let userEmail = user.email
                 i += 1
-                if userName.caseInsensitiveCompare(name) == .orderedSame {
+                if userEmail.caseInsensitiveCompare(email) == .orderedSame {
                     strongSelf.rank = i - 1
                     strongSelf.personalRank = "   Your rank : \(strongSelf.rank)"
                 }

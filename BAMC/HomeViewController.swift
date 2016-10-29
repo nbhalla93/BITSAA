@@ -41,8 +41,8 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     func getCalorieString() {
         var totalCalorie = 0
             var comps = DateComponents()
-            comps.day = 1
-            comps.month = 11
+            comps.day = 28
+            comps.month = 10
             comps.year = 2016
             let datey = Calendar.current.date(from: comps)
             let startDate = Calendar.current.startOfDay(for: datey!)

@@ -273,7 +273,7 @@
                                     <constraint firstItem="sak-H1-I7O" firstAttribute="top" secondItem="koF-E0-tcQ" secondAttribute="bottom" constant="20" id="huQ-jv-pej"/>
                                     <constraint firstItem="uZe-ga-Wlm" firstAttribute="top" secondItem="swx-ac-Nfv" secondAttribute="bottom" constant="10" id="jfx-dj-KCT"/>
                                     <constraint firstItem="sak-H1-I7O" firstAttribute="centerX" secondItem="NBO-mr-xPL" secondAttribute="centerX" id="sYC-VH-rsQ"/>
-                                    <constraint firstItem="eH8-fq-Rc7" firstAttribute="centerX" secondItem="AFm-Y4-Oyh" secondAttribute="centerX" id="vfT-LU-TXL"/>
+                                    <constraint firstItem="eH8-fq-Rc7" firstAttribute="centerX" secondItem="NBO-mr-xPL" secondAttribute="centerX" id="tu3-0S-1Fi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-pP-YcV">
