@@ -22,23 +22,42 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUp(_ sender: AnyObject) {
         
+        
         if let nameS = name.text, let numberS = mobileNumber.text, let mailS = emailID.text, let passS = password.text {
-            UserDefaults.standard.set(name.text, forKey: kname)
-            UserDefaults.standard.set(emailID.text, forKey: kemail)
-
-            APIService.sharedInstance.signUp(name: nameS, email: mailS, phone: numberS, password: passS, completion: { [weak self] name in
-                guard let strongSelf = self else { return }
-                let view = WelcomeViewController.instantiateFromStoryboard()
-                DispatchQueue.main.async {
-                    strongSelf.present(view, animated: true, completion: nil)
-
-                }
+            
+            if isStringWithAnyText(object: name.text!) && isStringWithAnyText(object: mobileNumber.text!) && isStringWithAnyText(object: emailID.text!)
+                && isStringWithAnyText(object: password.text!)
+            {
+                UserDefaults.standard.set(name.text, forKey: kname)
+                UserDefaults.standard.set(emailID.text, forKey: kemail)
                 
-                
-            })
+                APIService.sharedInstance.signUp(name: nameS, email: mailS, phone: numberS, password: passS, completion: { [weak self] name in
+                    guard let strongSelf = self else { return }
+                    let view = WelcomeViewController.instantiateFromStoryboard()
+                    DispatchQueue.main.async {
+                        strongSelf.present(view, animated: true, completion: nil)
+                        
+                    }
+                    
+                    
+                    })
+
+            } else {
+                let alert = UIAlertController(title: "Required Fields Missing", message: "All the fields are required to sign up", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            
+            
             
         } else {
             let alert = UIAlertController(title: "Required Fields Missing", message: "All the fields are required to sign up", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+
             present(alert, animated: true, completion: nil)
             return
         }
@@ -65,5 +84,16 @@ class SignUpViewController: UIViewController {
         password.rightViewMode = .always
         password.rightView = UIImageView(image: UIImage(named: "ic_lock_outline_black_24dp"))
         
+    }
+    
+    func isStringWithAnyText(object: String) -> Bool {
+        if !(object is String) || object.isEqual(NSNull()) || object.isEqual("null") {
+            return false
+        }
+        
+        // swiftlint:disable:next force_cast
+        let string = object as! String
+        let trimmed = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return trimmed.characters.count > 0
     }
 }

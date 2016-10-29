@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B.A.M.C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHB-tv-FU8">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <color key="textColor" red="0.33753551136363635" green="0.13490805926878491" blue="0.31280944162667418" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join the BITS community to burn a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-38-AxP">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -34,12 +34,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="together!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhP-e0-Hom">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veb-dV-xN6">
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" red="0.33753551139999999" green="0.13490805929999999" blue="0.31280944160000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -82,32 +82,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About the App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8a-fe-aXe">
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.33753551139999999" green="0.13490805929999999" blue="0.31280944160000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAMC : Burn a Million Calories!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-1O-RTV">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A flagship program aimed at all the fitness freaks, BAMC is here to be a constant fixture in the BITSIAN community." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di6-gs-Vja">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be a part of this wonderful event." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pln-9U-laJ">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be a part of this wonderful event." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pln-9U-laJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8M-Ur-izo">
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" red="0.33753551139999999" green="0.13490805929999999" blue="0.31280944160000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3V0-EU-FA2" kind="presentation" id="0Jc-DM-hU7"/>
+                                    <segue destination="zP2-ZI-RwM" kind="presentation" id="w4P-Ob-RRG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,6 +132,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWn-o0-ghm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-673" y="260"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4jx-e1-vS2">
+            <objects>
+                <viewController id="o30-pN-IRf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Cl-y5-Hba"/>
+                        <viewControllerLayoutGuide type="bottom" id="eAN-RZ-S7e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HRJ-fU-Ry4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honor Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dys-61-x9I">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kbt-sJ-PKb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participanys of BAMC undertake that they will not resort to any unfair means during BAMC to report an increased calorie count." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKz-Kv-ZDa">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnb-Ks-Ama">
+                                <color key="backgroundColor" red="0.33753551139999999" green="0.13490805929999999" blue="0.31280944160000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="h97-Wo-ieH"/>
+                                    <constraint firstAttribute="height" constant="40" id="x5Q-IU-zvc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="I AGREE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3V0-EU-FA2" kind="presentation" id="BXf-XB-ta1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TKz-Kv-ZDa" firstAttribute="top" secondItem="Dys-61-x9I" secondAttribute="bottom" constant="15" id="6aa-xc-7a8"/>
+                            <constraint firstItem="Dys-61-x9I" firstAttribute="top" secondItem="5Cl-y5-Hba" secondAttribute="bottom" constant="10" id="COS-l5-ajD"/>
+                            <constraint firstItem="Dys-61-x9I" firstAttribute="leading" secondItem="HRJ-fU-Ry4" secondAttribute="leading" constant="10" id="I4e-r8-7OV"/>
+                            <constraint firstItem="Mnb-Ks-Ama" firstAttribute="centerX" secondItem="HRJ-fU-Ry4" secondAttribute="centerX" id="NBs-ag-Pej"/>
+                            <constraint firstItem="TKz-Kv-ZDa" firstAttribute="leading" secondItem="HRJ-fU-Ry4" secondAttribute="leading" constant="10" id="YWT-hu-Iay"/>
+                            <constraint firstAttribute="trailing" secondItem="TKz-Kv-ZDa" secondAttribute="trailing" constant="10" id="aaT-FQ-AJe"/>
+                            <constraint firstItem="Mnb-Ks-Ama" firstAttribute="top" secondItem="TKz-Kv-ZDa" secondAttribute="bottom" constant="40" id="lX4-8u-97i"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tL2-Rc-EvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="255"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="4xJ-nR-A8y">
@@ -218,7 +274,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIA-6K-BEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="260"/>
+            <point key="canvasLocation" x="1356" y="269"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jZK-LY-MyH">
+            <objects>
+                <viewController id="zP2-ZI-RwM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qah-Wi-78j"/>
+                        <viewControllerLayoutGuide type="bottom" id="ovL-rL-qUb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AQt-DZ-QYt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5S-8A-z2u">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ech-NX-yap"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S15-m5-AXY">
+                                <string key="text">BITSAA, BITS2Fitness and members of BAMC organizing committee, neither have the liability nor the responsibility towards any person or entity with respect to any loss or damages arising to the participants in BAMC. BAMC is an event conducted by BITS Alumni Association to promote importance of healthy lifestyle among BITSians across the globe. BITSAA, BITS2Fitness and member of BAMC organizing committee are also not responsible for health, injuries or any other mishaps that may happen to the participants as a result of their participation in BAMC. Please consult your physician for any questions related to health and physical activity.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-7E-itM">
+                                <color key="backgroundColor" red="0.33753551139999999" green="0.13490805929999999" blue="0.31280944160000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RaL-Rz-JTD"/>
+                                    <constraint firstAttribute="width" constant="200" id="ss3-95-GtU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="I AGREE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="o30-pN-IRf" kind="presentation" id="bvn-Ca-Lvf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ENo-7E-itM" firstAttribute="top" secondItem="S15-m5-AXY" secondAttribute="bottom" constant="40" id="50e-dv-Aeb"/>
+                            <constraint firstItem="H5S-8A-z2u" firstAttribute="top" secondItem="qah-Wi-78j" secondAttribute="bottom" constant="10" id="DX2-fV-b6c"/>
+                            <constraint firstAttribute="trailing" secondItem="S15-m5-AXY" secondAttribute="trailing" constant="10" id="LVs-xy-qZz"/>
+                            <constraint firstItem="H5S-8A-z2u" firstAttribute="leading" secondItem="AQt-DZ-QYt" secondAttribute="leading" constant="10" id="Lzy-e6-wUJ"/>
+                            <constraint firstItem="S15-m5-AXY" firstAttribute="leading" secondItem="AQt-DZ-QYt" secondAttribute="leading" constant="10" id="MLq-Pv-RHK"/>
+                            <constraint firstItem="S15-m5-AXY" firstAttribute="top" secondItem="H5S-8A-z2u" secondAttribute="bottom" constant="15" id="VJv-Uy-DFR"/>
+                            <constraint firstItem="ENo-7E-itM" firstAttribute="centerX" secondItem="AQt-DZ-QYt" secondAttribute="centerX" id="yFi-R8-vAS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXF-iG-HhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="260"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="XFw-dq-DOg">
@@ -242,14 +355,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You for registering !!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQ8-p0-kWT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integrate with Apple Health to keep track of your fitness data." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQ8-p0-kWT">
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMZ-Ax-4cg">
                                 <color key="backgroundColor" red="0.33753551139999999" green="0.13490805929999999" blue="0.31280944160000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="CONTINUE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B1j-I8-KTe"/>
+                                    <constraint firstAttribute="width" constant="200" id="T5x-4z-Nog"/>
+                                </constraints>
+                                <state key="normal" title="ALLOW ACCESS">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -264,9 +381,11 @@
                             <constraint firstItem="eQ8-DO-Qnl" firstAttribute="centerX" secondItem="hBI-Aq-qV2" secondAttribute="centerX" id="Ikk-Dk-4Ej"/>
                             <constraint firstItem="tAO-MJ-eWx" firstAttribute="top" secondItem="c95-Kf-Xn6" secondAttribute="bottom" constant="100" id="LBG-WN-6DK"/>
                             <constraint firstItem="LQ8-p0-kWT" firstAttribute="centerX" secondItem="hBI-Aq-qV2" secondAttribute="centerX" id="SoR-bH-IMZ"/>
+                            <constraint firstItem="LQ8-p0-kWT" firstAttribute="leading" secondItem="hBI-Aq-qV2" secondAttribute="leadingMargin" id="YLv-M1-NqC"/>
                             <constraint firstItem="eQ8-DO-Qnl" firstAttribute="top" secondItem="tAO-MJ-eWx" secondAttribute="bottom" constant="40" id="aWq-9l-uxx"/>
                             <constraint firstItem="qMZ-Ax-4cg" firstAttribute="centerX" secondItem="hBI-Aq-qV2" secondAttribute="centerX" id="eZN-kq-tA2"/>
                             <constraint firstItem="LQ8-p0-kWT" firstAttribute="top" secondItem="eQ8-DO-Qnl" secondAttribute="bottom" constant="30" id="hUs-VY-Xbz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LQ8-p0-kWT" secondAttribute="trailing" id="rXC-mJ-EAw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aRO-NK-t8o"/>
@@ -276,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHD-3T-Vt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="260"/>
+            <point key="canvasLocation" x="2049" y="260"/>
         </scene>
     </scenes>
 </document>

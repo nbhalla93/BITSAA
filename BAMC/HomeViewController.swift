@@ -23,19 +23,9 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        healthManager.authorizeHealthKit { [weak self ] (success, error) in
-            guard let strongSelf = self else { return }
-            
-            if error != nil {
-
-                print("Error in authorizing")
-            } else if success! {
-                print("AUthorized successfully")
-                strongSelf.healthManager.updateDailyStepCount()
-                strongSelf.healthManager.updateCalorieCount()
-            }
-        }
-            
+        healthManager.updateDailyStepCount()
+        healthManager.updateCalorieCount()
+        
         healthManager.delegate = self
         syncWithServer(nil)
         activityIndicator.stopAnimating()
@@ -58,7 +48,12 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
             let startDate = Calendar.current.startOfDay(for: datey!)
             let endDate = Date(timeInterval: 1296000, since: startDate)
             
-            
+        if Date().compare(startDate) == .orderedAscending {
+            activityIndicator.stopAnimating()
+            return
+        }
+        
+        
             HealthManager.sharedInstance.getCalorieCount(startDate: startDate, endDate: endDate, comletion: { [weak self] value in
                 guard let strongSelf = self else { return }
                 totalCalorie += value
@@ -78,11 +73,11 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
                 strongSelf.activityIndicator.stopAnimating()
             }
             
-            if let valReceived = Int(value) {
-                let val = (valReceived/100000)*100
+            if let valReceived = Double(value) {
+                let val = Int(valReceived/10000)
                 DispatchQueue.main.async {
-                    strongSelf.percentage.text = String(val)
-                    strongSelf.progressViewbar.progress = Float(valReceived/1000000)
+                    strongSelf.percentage.text = String(val) + " %"
+                    strongSelf.progressViewbar.progress = Float(valReceived/1000000.0)
                     strongSelf.activityIndicator.stopAnimating()
                 }
             }

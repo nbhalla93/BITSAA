@@ -13,6 +13,8 @@ class LeaderBoardViewController: UITableViewController {
 
     var leaders: [Leader] = []
     var activityIndicator: UIActivityIndicatorView?
+    var personalRank = "   Your Rank : "
+    var rank = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,20 @@ class LeaderBoardViewController: UITableViewController {
 
             print("got leaders = \(leaders)")
             strongSelf.leaders = leaders
+            
+            let name = UserDefaults.standard.value(forKey: kname) as! String
+            var i = 1
+            
+            for user in strongSelf.leaders {
+                let userName = user.name
+                i += 1
+                if userName.caseInsensitiveCompare(name) == .orderedSame {
+                    strongSelf.rank = i - 1
+                    strongSelf.personalRank = "   Your rank : \(strongSelf.rank)"
+                }
+            }
+            
+            
             DispatchQueue.main.async {
                 strongSelf.tableView.reloadData()
                 strongSelf.activityIndicator?.stopAnimating()
@@ -50,7 +66,7 @@ class LeaderBoardViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
+        return 100.0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -60,6 +76,13 @@ class LeaderBoardViewController: UITableViewController {
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 210, y: 25, width: 20, height: 20))
         activityIndicator?.hidesWhenStopped = true
         activityIndicator?.color = UIColor.white
+        
+        let myRankView = UILabel(frame: CGRect(x: 0, y: 50, width: view.frame.size.width, height: 50.0))
+        myRankView.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1.0)
+        myRankView.text = personalRank
+
+        sview.addSubview(myRankView)
+        
         if let viewActivity = activityIndicator {
             sview.addSubview(viewActivity)
         }
