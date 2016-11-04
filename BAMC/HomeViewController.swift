@@ -27,7 +27,6 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
         healthManager.updateCalorieCount()
         
         healthManager.delegate = self
-        syncWithServer(nil)
         activityIndicator.stopAnimating()
     }
     
@@ -41,8 +40,8 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
     func getCalorieString() {
         var totalCalorie = 0
             var comps = DateComponents()
-            comps.day = 28
-            comps.month = 10
+            comps.day = 6
+            comps.month = 11
             comps.year = 2016
             let datey = Calendar.current.date(from: comps)
             let startDate = Calendar.current.startOfDay(for: datey!)
