@@ -13,12 +13,30 @@ import SwiftyJSON
 class APIService: NSObject {
     static let sharedInstance = APIService()
     
-    static let baseURL =  "http://bamc.netne.net/"
-    
-    
     func getLeaders(completion: @escaping (_:[Leader]) -> ())  {
         do {
-            let opt = try HTTP.GET("http://bamc.netne.net/myrank.php")
+            let opt = try HTTP.GET("http://ec2-54-169-240-82.ap-southeast-1.compute.amazonaws.com/leaderboard.php")
+            opt.start { response in
+                if let err = response.error {
+                    print("error: \(err.localizedDescription)")
+                    return //also notify app of failure as needed
+                }
+                
+                let reponseString = self.sanitize(input: response.text!)
+                print("responseString = \(reponseString)")
+                let json = JSON(data:reponseString.data(using: .utf8, allowLossyConversion: false)!)
+                let leaders: [Leader] =  json.arrayValue.map({ Leader(data:$0) })
+                completion(leaders)
+            }
+            
+        } catch let error {
+            print("got an error creating the request: \(error)")
+        }
+    }
+    
+    func getMyRank(completion: @escaping (_:[Leader]) -> ())  {
+        do {
+            let opt = try HTTP.GET("http://ec2-54-169-240-82.ap-southeast-1.compute.amazonaws.com/myrank.php")
             opt.start { response in
                 if let err = response.error {
                     print("error: \(err.localizedDescription)")
@@ -41,7 +59,7 @@ class APIService: NSObject {
         let params = ["name": name, "email" : email, "password": password, "number": phone] as [String : Any]
         let headers = ["Content-Type": "multipart/form-data"]
         do {
-            let opt = try HTTP.POST("http://bamc.netne.net/registration.php", parameters: params,headers: headers)
+            let opt = try HTTP.POST("http://ec2-54-169-240-82.ap-southeast-1.compute.amazonaws.com/registration.php", parameters: params,headers: headers)
             opt.start { response in
                 let reponseString = self.sanitize(input: response.text!)
                 print("responseString = \(reponseString)")
@@ -57,7 +75,7 @@ class APIService: NSObject {
         let params = ["name": name, "email" : email, "map": calories] as [String : Any]
         let headers = ["Content-Type": "multipart/form-data"]
         do {
-            let opt = try HTTP.POST("http://bamc.netne.net/calories_display.php", parameters: params,headers: headers)
+            let opt = try HTTP.POST("http://ec2-54-169-240-82.ap-southeast-1.compute.amazonaws.com/calories_display.php", parameters: params,headers: headers)
             opt.start { response in
                 let reponseString = self.sanitize(input: response.text!)
                 print("responseString = \(reponseString)")
@@ -72,7 +90,7 @@ class APIService: NSObject {
     
     func getCalories() {
         do {
-            let opt = try HTTP.GET("http://bamc.netne.net/myrank.php")
+            let opt = try HTTP.GET("http://ec2-54-169-240-82.ap-southeast-1.compute.amazonaws.com/myrank.php")
             opt.start { response in
                 if let err = response.error {
                     print("error: \(err.localizedDescription)")

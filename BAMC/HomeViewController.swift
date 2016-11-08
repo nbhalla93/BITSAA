@@ -59,6 +59,15 @@ class HomeViewController: UIViewController, HealthManagerDelegate {
                 let stringValue = "[" + String(totalCalorie) + ",0]"
                 strongSelf.syncValue(stringValue: stringValue)
             })
+        
+        perform(#selector(HomeViewController.stopActivityIndicator), with: nil, afterDelay: 5.0)
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.activityIndicator.stopAnimating()
+        }
     }
     
     func syncValue(stringValue: String) {

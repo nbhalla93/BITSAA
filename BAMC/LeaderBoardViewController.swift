@@ -12,6 +12,7 @@ import UIKit
 class LeaderBoardViewController: UITableViewController {
 
     var leaders: [Leader] = []
+    var everyOneList: [Leader] = []
     var activityIndicator: UIActivityIndicatorView?
     var personalRank = "   Your Rank : "
     var rank = 1
@@ -26,30 +27,44 @@ class LeaderBoardViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         activityIndicator?.startAnimating()
+        getTopLeaders()
+        showMyRank()
+    }
+    
+    func getTopLeaders() {
         APIService.sharedInstance.getLeaders { [weak self] (leaders) in
             guard let strongSelf = self else { return }
-
+            
             print("got leaders = \(leaders)")
             strongSelf.leaders = leaders
-            
-            let email = UserDefaults.standard.value(forKey: kemail) as! String
-            var i = 1
-            
-            for user in strongSelf.leaders {
-                let userEmail = user.email
-                i += 1
-                if userEmail.caseInsensitiveCompare(email) == .orderedSame {
-                    strongSelf.rank = i - 1
-                    strongSelf.personalRank = "   Your rank : \(strongSelf.rank)"
-                }
-            }
-            
             
             DispatchQueue.main.async {
                 strongSelf.tableView.reloadData()
                 strongSelf.activityIndicator?.stopAnimating()
             }
             
+        }
+    }
+    
+    func showMyRank() {
+        APIService.sharedInstance.getMyRank { [weak self] (entireList) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.everyOneList = entireList
+            
+            let email = UserDefaults.standard.value(forKey: kemail) as! String
+            var i = 1
+            
+            for user in strongSelf.everyOneList {
+                let userEmail = user.email
+                i += 1
+                if userEmail.caseInsensitiveCompare(email) == .orderedSame {
+                    strongSelf.rank = i - 1
+                    DispatchQueue.main.async {
+                        strongSelf.personalRank = "   Your rank : \(strongSelf.rank)"
+                    }
+                }
+            }
         }
     }
     
